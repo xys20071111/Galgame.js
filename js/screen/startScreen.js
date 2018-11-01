@@ -1,1 +1,1 @@
-setupSplendUI('/asstes/data/bgimage/title.jpg');
+setupSplendUI('./asstes/data/bgimage/title.jpg');
