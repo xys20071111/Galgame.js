@@ -6,8 +6,9 @@ const GameUI = {
     name : null,
     text : null
 }
-var SplendUI={
+const SplendUI={
     startButton : null,
     loadButton :null
 };
+const byttonBar = new PIXI.Container();
 
