@@ -6,7 +6,7 @@ const UI = {
     this.background.texture = texture;
   },
   showSplashUI:function(){
-
+    UI.background.texture = SplashUI.background;
   }
 };
 const buttonBar = new PIXI.Container();
