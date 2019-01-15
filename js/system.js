@@ -4,6 +4,11 @@ const UI = {
   background:new PIXI.Sprite,
   set setBackground(texture){
     this.background.texture = texture;
+  },
+  showSplashUI:function(){
+
   }
-}
+};
 const buttonBar = new PIXI.Container();
+const splashUIButton = new PIXI.Container();
+const textBar = new PIXI.Container();
