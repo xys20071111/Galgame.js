@@ -15,6 +15,7 @@ const nameBar = null;
 const background = new PIXI.Sprite();
 //初始化UI组件
 app.stage.addChild(background);
+app.stage.addChild(frontImage);
 talkBar.addChild(nameDisplayed);
 talkBar.addChild(textInTalk);
 talkBar.addChild(talkBarFrame);
