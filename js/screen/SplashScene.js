@@ -1,3 +1,5 @@
 "use strict"
-const SplashScene = Obejct.create(scene);
+const SplashScene = Object.create(scene);
+SplashScene.init = ()=>{
 SplashScene.background = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
+};
