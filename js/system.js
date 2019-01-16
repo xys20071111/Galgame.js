@@ -13,14 +13,15 @@ const nameDisplayed = new PIXI.Text();
 const textInTalk = new PIXI.Text();
 const text = new PIXI.text();
 
-var talkBarFrame = null;
+const talkBarFrame = new PIXI.Container();
+const nameBar = null;
 var background = null;
+
 talkBar.addChild(nameDisplayed);
 talkBar.addChild(textInTalk);
 talkbar.addChild(talkBarFrame);
 //预加载素材并初始化背景
 textBar.addChild(text);
 PIXI.loader.add(resources).load(()=>{
-  talkBarFrame = new PIXI.Sprite(PIXI.loader.resources['asstes/data/image/frame_talk.jpg'].texture);
   background = new PIXI.Sprite();
 });
