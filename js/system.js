@@ -1,16 +1,15 @@
 "use strict"
 const app = new PIXI.Application({height:600,width:800});
 document.body.appendChild(app.view);
-
+//基本UI组件
 const buttonBar = new PIXI.Container();
 const splashUIButton = new PIXI.Container();
 const textBar = new PIXI.Container();
 const talkBar = new PIXI.Container();
-
+//UI组件成员
 const nameDisplayed = new PIXI.Text();
 const textInTalk = new PIXI.Text();
 const text = new PIXI.Text();
-
 const talkBarFrame = new PIXI.Container();
 const nameBar = null;
 const background = new PIXI.Sprite();
