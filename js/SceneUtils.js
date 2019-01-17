@@ -1,8 +1,9 @@
 const scene = {};
-scene.create = (bg){
+scene.create = (bg,fi,ntd,dtd,ns)=>{
   let newScene = Object.create(sceneModel);
-  PIXI.loader.add(bg).load(()=>{
-    newScene.background = PIXI.loader.resources[bg].texture;
-  });
+  newScene.background = PIXI.utils.TextureCache[bg];
+  newScene.frontImage = PIXI.utils.TextureCache[fi];
+  newScene.nameToDisplay = ntd;
+  newScene.dialogToDisplay
   return newScene;
 }
