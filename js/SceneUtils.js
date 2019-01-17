@@ -10,6 +10,16 @@ scene.create = (bg,fi,ntd,dtd,ns)=>{
 }
 scene.use = (target)=>{
   UI.talk(target.nameToDisplay,target.dialogToDisplay);
-  UI.setBackground(target.background);
-  UI.setFrontImage(target.frontImage);
+  if(target.background != 'same'){
+      UI.setBackground(target.background);
+  }
+  if(target.frontImage != 'same'){
+    if(target.frontImage == 'none'){
+      UI.hide(frontImage);
+    }else{
+      UI.show(frontImage);
+        UI.setFrontImage(target.frontImage);
+    }
+  }
+
 }
