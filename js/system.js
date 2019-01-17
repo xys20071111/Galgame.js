@@ -14,8 +14,6 @@ const textInTalk = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 
 const textInTextBar = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff});
 const talkBarFrame = new PIXI.Container();
 //初始化UI组件
-app.stage.addChild(background);
-app.stage.addChild(frontImage);
 talkBar.addChild(nameDisplayed);
 talkBar.addChild(textInTalk);
 talkBar.addChild(talkBarFrame);
