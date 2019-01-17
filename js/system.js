@@ -20,3 +20,16 @@ talkBar.addChild(nameDisplayed);
 talkBar.addChild(textInTalk);
 talkBar.addChild(talkBarFrame);
 textBar.addChild(text);
+//预加载素材
+PIXI.loader.add(resourcesList)
+           .on("progress",(loader, resource)=>{
+             console.log("loading: " + resource.url);
+             console.log("progress: " + loader.progress + "%");
+           }).load(()=>{
+             //初始化UI
+             app.stage.addChild(splashUIButton);
+             app.stage.addChild(textBar);
+             app.stage.addChild(talkBar);
+             textBar.visible = false;
+             talkBar.visible = false;
+           })

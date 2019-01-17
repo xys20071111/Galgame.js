@@ -6,4 +6,4 @@ const user_config = {
 const config = {
     ver:'0.1',
 };
-const resources=[];
+const resourcesList=[];
