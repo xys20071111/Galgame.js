@@ -10,7 +10,7 @@ const background = new PIXI.Sprite();
 //UI组件成员
 const nameDisplayed = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff});
 const textInTalk = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff});
-const talkBarFrame = new PIXI.Container();
+const talkBarFrame = new PIXI.Sprite();
 const startButton = new PIXI.Sprite();
 const loadButton = new PIXI.Container();
 //初始化UI组件
@@ -37,6 +37,6 @@ PIXI.loader.add(resourcesList)
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
              UI.setBackground('asstes/data/bgimage/title.jpg');
              //显示开始UI
-             UI.setStartUI('asstes/data/image/button_base.jpg','asstes/data/image/button_base.jpg');
+             UI.setStartUI('asstes/data/image/button_base.jpg','asstes/data/image/button_base.jpg',test);
 
 });

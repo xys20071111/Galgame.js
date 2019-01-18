@@ -16,7 +16,9 @@ UI.setBackground = (texture) => {
 UI.setFrontImage = (texture) => {
   frontImage.texture = PIXI.loader.resources[texture].texture;
 }
-UI.setStartUI = (startButtonTexture,loadButtonTexture,scene) => {
+UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
+  startButton.x = 300;
+  startButton.y = 400;
   startButton.texture = PIXI.loader.resources[startButtonTexture].texture;
   loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
   startButton.interactive = true;
@@ -24,7 +26,7 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,scene) => {
     app.stage.addChild(talkBar);
     app.stage.addChild(buttonBar);
     UI.hide(splashUIButton);
-   scene.use(scene);
+    scene.use(targetScene);
   });
   app.stage.addChild(splashUIButton);
 }
