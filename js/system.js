@@ -8,8 +8,8 @@ const talkBar = new PIXI.Container();
 const frontImage = new PIXI.Sprite();
 const background = new PIXI.Sprite();
 //UI组件成员
-const nameDisplayed = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff});
-const textInTalk = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0xffffff});
+const nameDisplayed = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000});
+const textInTalk = new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000});
 const talkBarFrame = new PIXI.Sprite();
 const startButton = new PIXI.Sprite();
 const loadButton = new PIXI.Container();
@@ -27,7 +27,7 @@ PIXI.loader.add(resourcesList)
              console.log("progress: " + loader.progress + "%");
              if(resource.error){
                console.log(resource.error);
-               document.write('Error:when loading ' + resource.url + 'had cause ' + resource.error);
+               document.write('Error:when loading ' + resource.url + ' had cause ' + resource.error);
                throw resource.error;
              }
            }).load(()=>{
@@ -37,6 +37,6 @@ PIXI.loader.add(resourcesList)
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
              UI.setBackground('asstes/data/bgimage/title.jpg');
              //显示开始UI
-             UI.setStartUI('asstes/data/image/button_base.jpg','asstes/data/image/button_base.jpg',test);
+             UI.setStartUI(resourcesList[1],resourcesList[1],test);
 
 });

@@ -23,8 +23,15 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
   loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
   startButton.interactive = true;
   startButton.on('click', (event) => {
+    //组建游戏界面
     app.stage.addChild(talkBar);
     app.stage.addChild(buttonBar);
+    talkBarFrame.texture = PIXI.loader.resources[resourcesList[2]].texture;
+    talkBarFrame.y = 310;
+    nameDisplayed.x = 100;
+    nameDisplayed.y = 330;
+    textInTalk.x = 30;
+    textInTalk.y = 380;
     UI.hide(splashUIButton);
     scene.use(targetScene);
   });

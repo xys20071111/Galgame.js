@@ -8,5 +8,6 @@ const config = {
 };
 const resourcesList=[
 'asstes/data/bgimage/title.jpg',
-'asstes/data/image/button_base.jpg'
+'asstes/data/image/button/start.jpg',
+'asstes/data/image/frame.png'
 ];
