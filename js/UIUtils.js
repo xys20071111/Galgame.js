@@ -26,12 +26,14 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
     //组建游戏界面
     app.stage.addChild(talkBar);
     app.stage.addChild(buttonBar);
-    talkBarFrame.texture = PIXI.loader.resources[resourcesList[2]].texture;
-    talkBarFrame.y = 310;
+    talkBarFrame.texture = PIXI.loader.resources[/* 对话框图片 */resourcesList[2]].texture;
+    //设置组件位置
     nameDisplayed.x = 100;
-    nameDisplayed.y = 330;
+    nameDisplayed.y = 25;
     textInTalk.x = 30;
-    textInTalk.y = 380;
+    textInTalk.y = 65;
+    talkBar.y = 310;
+
     UI.hide(splashUIButton);
     scene.use(targetScene);
   });

@@ -22,5 +22,13 @@ scene.use = (target)=>{
         UI.setFrontImage(target.frontImage);
     }
   }
-
+  talkBar.on('click',()=>{
+    scene.use(target.nextScene);
+  });
+  background.on('click',()=>{
+    scene.use(target.nextScene);
+  });
+  frontImage.on('click',()=>{
+    scene.use(target.nextScene);
+  });
 }
