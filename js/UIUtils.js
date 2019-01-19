@@ -35,7 +35,7 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
     talkBar.y = 310;
 
     UI.hide(splashUIButton);
-    scene.use(targetScene);
+    scene.use(/*第一个场景*/test);
   });
   app.stage.addChild(splashUIButton);
 }

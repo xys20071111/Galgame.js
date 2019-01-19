@@ -22,6 +22,8 @@ talkBar.addChild(nameDisplayed);
 talkBar.addChild(textInTalk);
 talkBar.addChild(talkBarFrame);
 talkBar.interactive = true;
+background.interactive = true;
+frontImage.interactive = true;
 //预加载素材
 PIXI.loader.add(resourcesList)
            .on("progress",(loader, resource)=>{
