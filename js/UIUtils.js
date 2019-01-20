@@ -24,8 +24,11 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
   startButton.interactive = true;
   startButton.on('click', (event) => {
     //组建游戏界面
+    app.stage.addChild(frontImage);
     app.stage.addChild(talkBar);
     app.stage.addChild(buttonBar);
+    frontImage.x = 200;
+    frontImage.y = 100;
     talkBarFrame.texture = PIXI.loader.resources[/* 对话框图片 */resourcesList[2]].texture;
     //设置组件位置
     nameDisplayed.x = 100;
