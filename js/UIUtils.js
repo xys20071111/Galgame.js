@@ -29,7 +29,7 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
     app.stage.addChild(buttonBar);
     frontImage.x = 200;
     frontImage.y = 100;
-    talkBarFrame.texture = PIXI.loader.resources[/* 对话框图片 */resourcesList[2]].texture;
+    talkBarFrame.texture = PIXI.loader.resources[/* 对话框图片 */'asstes/data/image/frame.png'].texture;
     //设置组件位置
     nameDisplayed.x = 100;
     nameDisplayed.y = 25;

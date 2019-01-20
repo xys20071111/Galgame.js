@@ -39,7 +39,7 @@ PIXI.loader.add(resourcesList)
              app.stage.addChild(background);
              //显示背景
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
-             UI.setBackground('asstes/data/bgimage/title.jpg');
+             UI.setBackground('asstes/data/image/bgimage/title.jpg');
              //显示开始UI
              UI.setStartUI(resourcesList[1],resourcesList[1],test);
 
