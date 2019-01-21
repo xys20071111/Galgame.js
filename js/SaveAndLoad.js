@@ -1,4 +1,4 @@
 const sl = {};
 sl.save = (slot)=>{
-  Object.defineProperty(localStorage,slot,{value:gameStuate,writeable:true});
+  Object.defineProperty(localStorage,slot,{value:gameStatus,writeable:true});
 }
