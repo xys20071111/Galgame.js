@@ -9,7 +9,7 @@ scene.create = (bg,fi,ntd,dtd,ns)=>{
   return newScene;
 }
 scene.use = (target)=>{
-  nowScene = target;
+  gameStatus.nowScene = target;
   UI.talk(target.nameToDisplay,target.dialogToDisplay);
   if(target.background != 'same'){
       UI.setBackground(target.background);

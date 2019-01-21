@@ -2,7 +2,11 @@
 const app = new PIXI.Application({height:600,width:800,backgroundColor:0xffffff});
 document.body.appendChild(app.view);
 //基础变量
-var nowScene;
+var gameStatus = {
+  nowScene:null,
+  playerName:null,
+  //如果还有什么需要的话，自己定义吧。
+};
 //基本UI组件
 const buttonBar = new PIXI.Container();
 const splashUIButton = new PIXI.Container();
