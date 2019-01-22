@@ -7,12 +7,13 @@ UI.show = (target)=>{
   target.alpha = 100;
   target.visible = true;
 };
-UI.fadeIn = (target) => {
-  target.visible = true;
-  for(let i = 0;i<=100;i++){
-    target.alpha = i;
-  }
-}
+// UI.fadeIn = (target) => {
+//   target.visible = true;
+//   for(let i = 0;i<=1;i+=0.0001){
+//     setTimeout(()=>{    target.alpha = i;},5000);
+//
+//   }
+// }
 UI.talk = (name,dialog) => {
   nameDisplayed.text = name;
   textInTalk.text = dialog;
@@ -30,6 +31,7 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
   loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
   startButton.interactive = true;
   startButton.on('click', (event) => {
+    UI.hide(splashUIButton);
     //组建游戏界面
     app.stage.addChild(frontImage);
     app.stage.addChild(talkBar);
@@ -43,7 +45,6 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
     textInTalk.x = 30;
     textInTalk.y = 65;
     talkBar.y = 310;
-    UI.hide(splashUIButton);
     scene.use(/*第一个场景*/test);
   });
   app.stage.addChild(splashUIButton);
