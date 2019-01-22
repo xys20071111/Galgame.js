@@ -1,11 +1,18 @@
 const UI = {};
 UI.hide=(target)=>{
+  target.alpha = 0;
   target.visible=false;
 };
 UI.show = (target)=>{
   target.alpha = 100;
   target.visible = true;
 };
+UI.fadeIn = (target) => {
+  target.visible = true;
+  for(let i = 0;i<=100;i++){
+    target.alpha = i;
+  }
+}
 UI.talk = (name,dialog) => {
   nameDisplayed.text = name;
   textInTalk.text = dialog;
@@ -36,9 +43,19 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
     textInTalk.x = 30;
     textInTalk.y = 65;
     talkBar.y = 310;
-
     UI.hide(splashUIButton);
     scene.use(/*第一个场景*/test);
   });
   app.stage.addChild(splashUIButton);
+}
+UI.setNextScene = (nextScene)=>{
+  talkBar.on('click',()=>{
+    scene.use(nextScene);
+  });
+  background.on('click',()=>{
+    scene.use(nextScene);
+  });
+  frontImage.on('click',()=>{
+    scene.use(nextScene);
+  });
 }

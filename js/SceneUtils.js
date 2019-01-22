@@ -1,11 +1,12 @@
 const scene = {};
-scene.create = (bg,fi,ntd,dtd,ns)=>{
+scene.create = (bg,fi,ntd,dtd,ns,ctr)=>{
   let newScene = Object.create(sceneModel);
   newScene.background = bg;
   newScene.frontImage = fi;
   newScene.nameToDisplay = ntd;
   newScene.dialogToDisplay = dtd;
   newScene.nextScene = ns;
+  newScene.codeToRun = ctr;
   return newScene;
 }
 scene.use = (target)=>{
@@ -22,13 +23,8 @@ scene.use = (target)=>{
         UI.setFrontImage(target.frontImage);
     }
   }
-  talkBar.on('click',()=>{
-    scene.use(target.nextScene);
-  });
-  background.on('click',()=>{
-    scene.use(target.nextScene);
-  });
-  frontImage.on('click',()=>{
-    scene.use(target.nextScene);
-  });
+  UI.setNextScene(target.nextScene);
+  if(target.codeToRun){
+    target.codeToRun();
+  }
 }

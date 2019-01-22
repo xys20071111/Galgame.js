@@ -3,7 +3,8 @@ const sceneModel = {
   frontImage:null,
   nameToDisplay:null,
   dialogToDisplay:null,
-  nextScene:null
+  nextScene:null,
+  codeToRun:null
 }
 const chooseSceneModel = {
   background:null,
