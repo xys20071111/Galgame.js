@@ -1,4 +1,8 @@
 const sl = {};
 sl.save = (slot)=>{
-  Object.defineProperty(localStorage,slot,{value:gameStatus,writeable:true});
+  localStorage[slot].scene = gameStatus.nowScene;
+}
+sl.load = (slot)=>{
+  scene.use(localStorage[slot].scene);
+
 }
