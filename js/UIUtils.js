@@ -31,23 +31,26 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
   loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
   startButton.interactive = true;
   startButton.on('click', (event) => {
-    UI.hide(splashUIButton);
-    //组建游戏界面
-    app.stage.addChild(frontImage);
-    app.stage.addChild(talkBar);
-    app.stage.addChild(buttonBar);
-    frontImage.x = 200;
-    frontImage.y = 100;
-    talkBarFrame.texture = PIXI.loader.resources[/* 对话框图片 */'asstes/data/image/frame.png'].texture;
-    //设置组件位置
-    nameDisplayed.x = 100;
-    nameDisplayed.y = 25;
-    textInTalk.x = 30;
-    textInTalk.y = 65;
-    talkBar.y = 310;
-    scene.use(/*第一个场景*/test);
+    UI.setupGameUI('asstes/data/image/frame.png',test);
   });
   app.stage.addChild(splashUIButton);
+}
+UI.setupGameUI = (framePic,startScene) => {
+  UI.hide(splashUIButton);
+  //组建游戏界面
+  app.stage.addChild(frontImage);
+  app.stage.addChild(talkBar);
+  app.stage.addChild(buttonBar);
+  frontImage.x = 200;
+  frontImage.y = 100;
+  talkBarFrame.texture = PIXI.loader.resources[framePic].texture;
+  //设置组件位置
+  nameDisplayed.x = 100;
+  nameDisplayed.y = 25;
+  textInTalk.x = 30;
+  textInTalk.y = 65;
+  talkBar.y = 310;
+  scene.use(startScene);
 }
 UI.setNextScene = (nextScene)=>{
   talkBar.on('click',()=>{
