@@ -41,8 +41,10 @@ UI.setupGameUI = (framePic,startScene) => {
   app.stage.addChild(frontImage);
   app.stage.addChild(talkBar);
   app.stage.addChild(buttonBar);
-  frontImage.x = 200;
-  frontImage.y = 100;
+  frontImage.x = 100;
+  frontImage.y = 45;
+  frontImage.width = 500;
+  frontImage.height = 600;
   talkBarFrame.texture = PIXI.loader.resources[framePic].texture;
   //设置组件位置
   nameDisplayed.x = 100;
