@@ -25,12 +25,15 @@ UI.setFrontImage = (texture) => {
   frontImage.texture = PIXI.loader.resources[texture].texture;
 }
 UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
-  startButton.x = 300;
+  //设置开始按钮位置
+  startButton.x = 300; 
   startButton.y = 400;
+  //设置开始按钮材质
   startButton.texture = PIXI.loader.resources[startButtonTexture].texture;
   loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
   startButton.interactive = true;
   startButton.on('click', (event) => {
+    //UI.setupGameUI(底下那个框的材质,第一个场景的名称)
     UI.setupGameUI('asstes/data/image/frame.png',test);
   });
   app.stage.addChild(splashUIButton);
