@@ -1,13 +1,24 @@
 const scene = {};
-scene.create = (bg,fi,ntd,dtd,ns,ctr)=>{
+scene.model = {
+  name:null,
+  background:null,
+  frontImage:null,
+  characterName:null,
+  dialog:null,
+  nextScene:null,
+  codeToRun:null,
+}
+scene.list = [];
+scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
   let newScene = Object.create(sceneModel);
+  newScene.name = n
   newScene.background = bg;
   newScene.frontImage = fi;
-  newScene.nameToDisplay = ntd;
+  newScene.characterName = ntd;
   newScene.dialogToDisplay = dtd;
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
-  return newScene;
+  scene.list.push(newScene);
 }
 scene.use = (target)=>{
   gameStatus.nowScene = target;
