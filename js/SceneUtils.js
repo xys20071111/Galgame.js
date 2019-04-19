@@ -7,6 +7,7 @@ scene.model = {
   dialog:null,
   nextScene:null,
   codeToRun:null,
+  bgm:null
 }
 scene.list = [];
 scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
@@ -15,11 +16,12 @@ scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
   newScene.background = bg;
   newScene.frontImage = fi;
   newScene.characterName = ntd;
-  newScene.dialogToDisplay = dtd;
+  newScene.dialog = dtd;
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
   scene.list.push(newScene);
 }
+/*
 scene.use = (target)=>{
   gameStatus.nowScene = target;
   UI.talk(target.nameToDisplay,target.dialogToDisplay);
@@ -39,3 +41,4 @@ scene.use = (target)=>{
     target.codeToRun();
   }
 }
+*/
