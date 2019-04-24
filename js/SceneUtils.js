@@ -20,7 +20,10 @@ scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
   newScene.codeToRun = ctr;
   scene.list.push(newScene);
 }
-scene.use = (target)=>{
+scene.use = (arg)=>{
+  for(let i = 0;i <= scene.list.length;i++){
+   if(scene.list[i] == arg){} 
+  }
   gameStatus.nowScene = target;
   UI.talk(target.nameToDisplay,target.dialogToDisplay);
   if(target.background != 'same'){
