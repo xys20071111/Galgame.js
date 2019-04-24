@@ -8,11 +8,11 @@ scene.model = {
   dialog:null,
   nextScene:null,
   codeToRun:null,
-}
+};
 scene.list = [];
 scene.create = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
   let newScene = Object.create(sceneModel);
-  newScene.name = n
+  newScene.name = n;;
   newScene.background = bg;
   newScene.frontImage = fi;
   newScene.characterName = ntd;
@@ -21,7 +21,7 @@ scene.create = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
   newScene.codeToRun = ctr;
   newScene.bgm = bgm;
   scene.list.push(newScene);
-}
+};
 scene.use = (arg)=>{
     if(typeof arg === 'string'){
         for(let i = 0;i <= scene.list.length;i++){
@@ -65,4 +65,4 @@ scene.use = (arg)=>{
 //  if(target.codeToRun){
 //    target.codeToRun();
 //  }
-}
+};
