@@ -9,7 +9,7 @@ scene.model = {
   codeToRun:null,
   bgm:null
 }
-scene.list = [];
+scene.list = {};
 scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
   let newScene = Object.create(sceneModel);
   newScene.name = n
@@ -19,7 +19,7 @@ scene.create = (n,bg,fi,ntd,dtd,ns,ctr)=>{
   newScene.dialog = dtd;
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
-  scene.list.push(newScene);
+  scene.list[n] = newScene;
 }
 /*
 scene.use = (target)=>{
