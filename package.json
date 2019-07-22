@@ -1,0 +1,22 @@
+{
+  "name": "galgame.js",
+  "version": "1.0.0",
+  "description": "A galgame framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dev.tencent.com:xys20071111/Galgamejs"
+  },
+  "keywords": [
+    "Galgame",
+    "HTML5"
+  ],
+  "author": "xys20071111",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
