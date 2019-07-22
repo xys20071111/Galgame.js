@@ -5,7 +5,7 @@
 // const test = scene.create('asstes/data/image/bgimage/title.jpg','asstes/data/image/frontimage/preview.png','test','test',test2,()=>{});
 //这是测试剧本
 const day0End = scene.create('same','none','','不知道以后会怎样呢？',null,()={});
-const LJX-joke3 = scene.create('same','smae','李佳心','开玩笑了啦。',day0End,()={});
-const LJX-joke2 = scene.create('same','same''XXX','什么啊...',LJX-joke3,()={});
-const LJX-joke = scene.create('same','smae','李佳心','',LJX-joke,()={});
+const LJX-joke3 = scene.create('same','smae','李佳心','开玩笑了啦。','day0End',()={});
+const LJX-joke2 = scene.create('same','same''XXX','什么啊...','LJX-joke3',()={});
+const LJX-joke = scene.create('same','smae','李佳心','','LJX-joke2',()={});
 /*底端*/

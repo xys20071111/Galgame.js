@@ -1,4 +1,8 @@
 "use strict"
+const isDev=true;
+if(isDev){
+	let vcon = new VConsole();
+}
 const app = new PIXI.Application({height:600,width:800,backgroundColor:0xffffff});
 document.body.appendChild(app.view);
 //基础变量
@@ -45,6 +49,6 @@ PIXI.loader.add(resourcesList)
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
              UI.setBackground('asstes/data/image/bgimage/title.jpg');
              //显示开始UI
-             UI.setStartUI(resourcesList[1],resourcesList[1],test);
+             UI.setStartUI(resourcesList[1],resourcesList[1],'LJX-joke');
 
 });

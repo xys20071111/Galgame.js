@@ -69,7 +69,7 @@ UI.setNextScene = (nextScene)=>{
     scene.use(nextScene);
   });
 }
-UI.crateButton = (bg,x,y,onClick)=>{
+UI.createButton = (bg,x,y,onClick)=>{
     let newButton = new PIXI.Sprite(PIXI.loader.resources[bg].texture);
     newButton.x = x;
     newButton.y = y;
