@@ -15,6 +15,7 @@ UI.show = (target)=>{
 //
 //   }
 // }
+/*
 UI.talk = (name,dialog) => {
   nameDisplayed.text = name;
   textInTalk.text = dialog;
@@ -24,6 +25,20 @@ UI.setBackground = (texture) => {
 }
 UI.setFrontImage = (texture) => {
   frontImage.texture = PIXI.loader.resources[texture].texture;
+}*/
+UI.display={
+	set FrontImage(value){
+		frontImage.texture = PIXI.loader.resources[value].texture;
+	},
+	set BackImang(value){
+		background.texture = PIXI.l9ader.resources[value].texture;	
+	},
+	set Name(value){
+		nameToDisplay.text = value;
+	},
+	set Dialog(value){
+		textInTalk.text = value;
+	}
 }
 UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
   //设置开始按钮位置
