@@ -24,10 +24,10 @@ PIXI.loader.add(resourcesList)
              }
            }).load(()=>{
              //初始化UI
-             app.stage.addChild(UI.display.background);
+             app.stage.addChild(UI.display.backImage);
              //显示背景
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
-             UI.display.BackImage = 'asstes/data/image/bgimage/title.jpg';
+             UI.display.backImage.texture = PIXI.loader.resources['asstes/data/image/bgimage/title.jpg'].texture;
              //显示开始UI
              UI.setStartUI(resourcesList[1],resourcesList[1],'LJX-joke');
 

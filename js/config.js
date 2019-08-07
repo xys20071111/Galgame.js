@@ -1,3 +1,7 @@
+var click = 'click';
+if(!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/))
+	click = 'tap';
+console.info('Click type:%s',click);
 const user_config = {
     name:"",
     author:"",

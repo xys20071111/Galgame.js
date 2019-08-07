@@ -75,10 +75,9 @@ scene.use = function(target){
 	if(typeof target !== typeof 'string')
 		throw 'TypeError target should be a String';
 	let target = scene.list[target];
-	UI.display.FrontImage = target.frontImage;
-	UI.display.BackImage = target.background;
-	UI.display.Name = target.characterName;
-	UI.display.Dialog = target.dialog;
+	UI.display.FrontImage(target.frontImage);
+	UI.display.BackImage(target.background);
+	UI.display.Dialog({name:target.characterName,dialog:target.dialog});
 	UI.setNextScene(target.nextScene);
 	if(typeof target.codeToRun === 'function')
 		target.codeToRun();

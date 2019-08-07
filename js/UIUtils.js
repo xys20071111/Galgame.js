@@ -33,27 +33,19 @@ UI.setFrontImage = (texture) => {
 UI.display={
 	//UI组件成员
 	frontImage : new PIXI.Sprite(),
-	background : new PIXI.Sprite(),
-	nameDisplayed : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
-	textInTalk : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
+	backImage : new PIXI.Sprite(),
+	name : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
+	dialog : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
 	talkBarFrame : new PIXI.Sprite(),
 	startButton : new PIXI.Sprite(),
 	loadButton : new PIXI.Container(),
-	set FrontImage(value){
-		this.frontImage.texture = PIXI.loader.resources[value].texture;
-	},
-	set BackImang(value){
-		console.log('Set a new background.')
-		this.background.texture = PIXI.l9ader.resources[value].texture;	
-	},
-	set Name(value){
-		nameToDisplay.text = value;
-	},
-	set Dialog(value){
-		textInTalk.text = value;
-	}
+	FrontImage : function(value){UI.display.frontImage.texture = PIXI.loader.resources[value].texture},
+	BackImage : function(value){UI.display.backImage.texture = PIXI.loader.resources[value].texture},
+	Dialog : function(value){UI.display.name.text = value.name;UI.display.dialog.text = value.dialog}
+
 }
 UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
+	console.log('Init startUI');
 	//设置开始按钮位置
 	UI.display.startButton.x = 300; 
 	UI.display.startButton.y = 400;
@@ -61,9 +53,10 @@ UI.setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
 	UI.display.startButton.texture = PIXI.loader.resources[startButtonTexture].texture;
 	UI.display.loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
 	UI.display.startButton.interactive = true;
-	UI.display.startButton.on('click', (event) => {
+	UI.display.startButton.on(click, (event) => {
 		//UI.setupGameUI(底下那个框的材质,第一个场景的名称)
-		UI.setupGameUI('asstes/data/image/frame.png',test);
+		console.log('Start game');
+		UI.setupGameUI('asstes/data/image/frame.png',targetScene);
 	});
 	app.stage.addChild(splashUIButton);
 }
@@ -87,13 +80,13 @@ UI.setupGameUI = (framePic,startScene) => {
 	scene.use(startScene);
 }
 UI.setNextScene = (nextScene)=>{
-	talkBar.on('click',()=>{
+	talkBar.on(click,()=>{
 		scene.use(nextScene);
 	});
-	UI.display.background.on('click',()=>{
+	UI.display.background.on(click,()=>{
 		scene.use(nextScene);
 	});
-	UI.display.frontImage.on('click',()=>{
+	UI.display.frontImage.on(click,()=>{
 		scene.use(nextScene);
 	});
 }
@@ -102,7 +95,7 @@ UI.createButton = (bg,x,y,onClick)=>{
 	newButton.x = x;
 	newButton.y = y;
 	newButton.interactive = true;
-	newButton.on('click',onClick);
+	newButton.on(click,onClick);
 	app.stage.addChild(newButton);
 	return newButton;
 };
@@ -113,5 +106,5 @@ talkBar.addChild(UI.display.nameDisplayed);
 talkBar.addChild(UI.display.textInTalk);
 talkBar.addChild(UI.display.talkBarFrame);
 talkBar.interactive = true;
-UI.display.background.interactive = true;
+UI.display.backImage.interactive = true;
 UI.dispaly.frontImage.interactive = true;
