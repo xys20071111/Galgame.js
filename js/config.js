@@ -1,6 +1,8 @@
-var click = 'click';
-if(!!navigator.userAgent.match(/AppleWebKit.*Mobile.*/))
+var click;
+if(navigator.userAgent.match(/.*Mobile.*/))
 	click = 'tap';
+else
+	click = 'click';
 console.info('Click type:%s',click);
 const user_config = {
     name:"",
