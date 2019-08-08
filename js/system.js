@@ -7,8 +7,7 @@ const app = new PIXI.Application({height:600,width:800,backgroundColor:0xffffff}
 document.body.appendChild(app.view);
 //基础变量
 var gameStatus = {
-  nowScene:null,
-  playerName:null,
+  scene:null
   //如果还有什么需要的话，自己定义吧。
 };
 

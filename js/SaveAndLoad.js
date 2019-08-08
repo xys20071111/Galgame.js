@@ -1,9 +1,9 @@
 const sl = {};
-sl.save = (slot)=>{
-  // BUG: 写不进数据
-  localStorage[slot].scene = gameStatus.nowScene;
+sl.save = function(slot){
+	localStorage[slot] = JSON.stringify(gameStatus);
 }
-sl.load = (slot)=>{
-  scene.use(localStorage[slot].scene);
-
+sl.load = function(slot){
+	let temp = JSON.parse(localStorage[slot]);
+	gameStatus = temp;
+	scene.use(temp.scene);
 }

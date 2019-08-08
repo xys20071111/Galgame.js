@@ -81,6 +81,7 @@ scene.use = function(target){
 	UI.setNextScene(target.nextScene);
 	if(typeof target.codeToRun === 'function')
 		target.codeToRun();
+	gameStatus.scene = target
 }
   
 //  gameStatus.nowScene = arg;
