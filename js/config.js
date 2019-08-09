@@ -4,17 +4,23 @@ if(navigator.userAgent.match(/.*Mobile.*/))
 else
 	click = 'click';
 console.info('Click type:%s',click);
-const user_config = {
-    name:"",
-    author:"",
-    ver:"",
-};
 const config = {
-    ver:'0.1',
+	isDev:true,
+	name:"",
+	author:"",
+	ver:"",
+	titleBackImage:'asstes/data/image/bgimage/title.jpg',
+	startScene:'',
+	startButtonTexture:'asstes/data/image/button/start.png',
+	loadButtonTexture:''
+
+};
+const sysconfig = {
+	ver:'0.1',
 };
 const resourcesList=[
-  'asstes/data/image/bgimage/title.jpg',
-  'asstes/data/image/button/start.png',
-  'asstes/data/image/frame.png',
-  'asstes/data/image/frontimage/preview.png'
+	'asstes/data/image/bgimage/title.jpg',
+	'asstes/data/image/button/start.png',
+	'asstes/data/image/frame.png',
+	'asstes/data/image/frontimage/preview.png'
 ];

@@ -72,10 +72,10 @@ UI.setupGameUI = (framePic,startScene) => {
 	UI.display.frontImage.height = 600;
 	UI.display.talkBarFrame.texture = PIXI.loader.resources[framePic].texture;
 	//设置组件位置
-	UI.display.nameDisplayed.x = 100;
-	UI.display.nameDisplayed.y = 25;
-	UI.display.textInTalk.x = 30;
-	UI.display.textInTalk.y = 65;
+	UI.display.name.x = 100;
+	UI.display.name.y = 25;
+	UI.display.dialog.x = 30;
+	UI.display.dialog.y = 65;
 	talkBar.y = 310;
 	scene.use(startScene);
 }
