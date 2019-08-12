@@ -10,9 +10,9 @@ const config = {
 	author:"",
 	ver:"",
 	titleBackImage:'asstes/data/image/bgimage/title.jpg',
-	startScene:'',
+	startScene:'test',
 	startButtonTexture:'asstes/data/image/button/start.png',
-	loadButtonTexture:''
+	loadButtonTexture:'asstes/data/image/button/start.png'
 
 };
 const sysconfig = {

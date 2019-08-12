@@ -1,3 +1,4 @@
+'use strict'
 const scene = {};
 scene.model = {
   name:null,
@@ -11,8 +12,8 @@ scene.model = {
   bgm:null
 }
 scene.list = {};
-scene.create = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
-  let newScene = Object.create(sceneModel);
+scene.add = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
+  let newScene = Object.create(scene.model);
   newScene.name = n;;
   newScene.background = bg;
   newScene.frontImage = fi;
@@ -71,14 +72,18 @@ scene.use = (arg)=>{
 }
 */
 
-scene.use = function(target){
-	if(typeof target !== typeof 'string')
+scene.use = function(s){
+	if(typeof s !== typeof 'string')
 		throw 'TypeError target should be a String';
-	let target = scene.list[target];
-	UI.display.FrontImage(target.frontImage);
-	UI.display.BackImage(target.background);
+	console.log('Use scene ',s);
+	let target = scene.list[s];
+	if(target.frontImage != null && target.frontImage != 'same' )
+		UI.display.FrontImage(target.frontImage);
+	if(target.background != 'same')
+		UI.display.BackImage(target.background);
 	UI.display.Dialog({name:target.characterName,dialog:target.dialog});
-	UI.setNextScene(target.nextScene);
+	if(target.nextScene != null)
+		UI.setNextScene(target.nextScene);
 	if(typeof target.codeToRun === 'function')
 		target.codeToRun();
 	gameStatus.scene = target
