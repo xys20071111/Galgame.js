@@ -26,12 +26,12 @@ UI.talk = (name,dialog) => {
   textInTalk.text = dialog;
 };
 UI.setBackground = (texture) => {
-  background.texture = PIXI.loader.resources[texture].texture;
+  background.texture = Loader.resources[texture].texture;
 }
 UI.setFrontImage = (texture) => {
-  frontImage.texture = PIXI.loader.resources[texture].texture;
+  frontImage.texture = Loader.resources[texture].texture;
 }*/
-export default const display={
+const display={
 	//UI组件成员
 	frontImage : new PIXI.Sprite(),
 	backImage : new PIXI.Sprite(),
@@ -40,19 +40,20 @@ export default const display={
 	talkBarFrame : new PIXI.Sprite(),
 	startButton : new PIXI.Sprite(),
 	loadButton : new PIXI.Container(),
-	FrontImage : function(value){display.frontImage.texture = PIXI.loader.resources[value].texture},
-	BackImage : function(value){display.backImage.texture = PIXI.loader.resources[value].texture},
+	FrontImage : function(value){display.frontImage.texture = Loader.resources[value].texture},
+	BackImage : function(value){display.backImage.texture = Loader.resources[value].texture},
 	Dialog : function(value){display.name.text = value.name;UI.display.dialog.text = value.dialog}
 
 }
+export default {display}
 export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
 	console.log('Init startUI');
 	//设置开始按钮位置
 	display.startButton.x = 300; 
 	display.startButton.y = 400;
 	//设置开始按钮材质
-	display.startButton.texture = PIXI.loader.resources[startButtonTexture].texture;
-	display.loadButton.texture = PIXI.loader.resources[loadButtonTexture].texture;
+	display.startButton.texture = Loader.resources[startButtonTexture].texture;
+	display.loadButton.texture = Loader.resources[loadButtonTexture].texture;
 	display.startButton.interactive = true;
 	display.startButton.on(click, (event) => {
 		//UI.setupGameUI(底下那个框的材质,第一个场景的名称)
@@ -71,7 +72,7 @@ export const setupGameUI = (framePic,startScene) => {
 	display.frontImage.y = 45;
 	display.frontImage.width = 500;
 	display.frontImage.height = 600;
-	display.talkBarFrame.texture = PIXI.loader.resources[framePic].texture;
+	display.talkBarFrame.texture = Loader.resources[framePic].texture;
 	//设置组件位置
 	display.name.x = 100;
 	display.name.y = 25;
@@ -92,7 +93,7 @@ export const setNextScene = (nextScene)=>{
 	});
 }
 export const createButton = (bg,x,y,onClick)=>{
-	let newButton = new PIXI.Sprite(PIXI.loader.resources[bg].texture);
+	let newButton = new PIXI.Sprite(Loader.resources[bg].texture);
 	newButton.x = x;
 	newButton.y = y;
 	newButton.interactive = true;
