@@ -1,6 +1,8 @@
 "use strict"
-if(config.isDev){
-	let vcon = new VConsole();
+import * as config from './config'
+import * as PIXI from "pixi.js"
+if(config.GameConfig.isDev){
+	//let vcon = new VConsole();
 }
 const app = new PIXI.Application({height:600,width:800,backgroundColor:0xffffff});
 document.body.appendChild(app.view);
@@ -11,7 +13,7 @@ var gameStatus = {
 };
 
 //预加载素材
-PIXI.loader.add(resourcesList)
+app.loader.add(resourcesList)
            .on("progress",(loader, resource)=>{
              console.log("loading: " + resource.url);
              console.log("progress: " + loader.progress + "%");
