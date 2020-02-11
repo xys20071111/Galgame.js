@@ -4,7 +4,7 @@
 	"description": "A galgame framework.",
 	"main": "index.html",
 	"scripts": {
-		"test": "node server",
+		"test": "webpack-dev-server --config ./build/webpack.dev.config.js",
 		"start": "electron desktop"
 	},
 	"repository": {

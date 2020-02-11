@@ -2,6 +2,7 @@
 //基本UI组件
 import * as PIXI from "pixi.js"
 import {Stage,Loader} from "./app"
+import * as scene from './scene'
 export const buttonBar = new PIXI.Container();
 export const splashUIButton = new PIXI.Container();
 export const dialogBar = new PIXI.Container();
@@ -32,7 +33,7 @@ UI.setFrontImage = (texture) => {
   frontImage.texture = Loader.resources[texture].texture;
 }*/
 const display={
-	//UI组件成员
+    //UI组件成员
 	frontImage : new PIXI.Sprite(),
 	backImage : new PIXI.Sprite(),
 	name : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
@@ -66,7 +67,7 @@ export const setupGameUI = (framePic,startScene) => {
 	UI.hide(splashUIButton);
 	//组建游戏界面
 	Stage.addChild(UI.display.frontImage);
-	Stage.addChild(talkBar);
+	Stage.addChild(dialogBar);
 	Stage.addChild(buttonBar);
 	display.frontImage.x = 100;
 	display.frontImage.y = 45;
@@ -78,11 +79,11 @@ export const setupGameUI = (framePic,startScene) => {
 	display.name.y = 25;
 	display.dialog.x = 30;
 	display.dialog.y = 65;
-	talkBar.y = 310;
+	dialogBar.y = 310;
 	scene.use(startScene);
 }
 export const setNextScene = (nextScene)=>{
-	talkBar.on(click,()=>{
+	dialogBar.on(click,()=>{
 		scene.use(nextScene);
 	});
 	display.background.on(click,()=>{
@@ -104,9 +105,9 @@ export const createButton = (bg,x,y,onClick)=>{
 //初始化UI组件
 splashUIButton.addChild(display.startButton);
 splashUIButton.addChild(display.loadButton);
-talkBar.addChild(display.nameDisplayed);
-talkBar.addChild(display.textInTalk);
-talkBar.addChild(display.talkBarFrame);
-talkBar.interactive = true;
+dialogBar.addChild(display.name);
+dialogBar.addChild(display.dialog);
+dialogBar.addChild(display.talkBarFrame);
+dialogBar.interactive = true;
 display.backImage.interactive = true;
-dispaly.frontImage.interactive = true;
+display.frontImage.interactive = true;

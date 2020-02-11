@@ -1,6 +1,5 @@
 'use strict'
-const scene = {};
-scene.model = {
+const model = {
   name:null,
   bgm:null,
   background:null,
@@ -11,8 +10,8 @@ scene.model = {
   codeToRun:null,
   bgm:null
 }
-scene.list = {};
-scene.add = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
+export const list = {};
+export  function add(n,bg,fi,ntd,dtd,ns,ctr,bgm){
   let newScene = Object.create(scene.model);
   newScene.name = n;;
   newScene.background = bg;
@@ -21,6 +20,7 @@ scene.add = (n,bg,fi,ntd,dtd,ns,ctr,bgm)=>{
   newScene.dialog = dtd;
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
+  newScene.bgm = bgm;
   scene.list[n] = newScene;
 }
 /*
@@ -72,7 +72,7 @@ scene.use = (arg)=>{
 }
 */
 
-scene.use = function(s){
+export function use(s){
 	if(typeof s !== typeof 'string')
 		throw 'TypeError target should be a String';
 	console.log('Use scene ',s);
