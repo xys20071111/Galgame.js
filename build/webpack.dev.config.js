@@ -5,5 +5,9 @@ module.exports = {
     entry: './src/main.js',
     output: {
         filename: './dev/app.js'
-    }
+    },
+    devServer:{
+        hotOnly:false,
+        disableHostCheck:true,
+    },
 };

@@ -32,7 +32,7 @@ UI.setBackground = (texture) => {
 UI.setFrontImage = (texture) => {
   frontImage.texture = Loader.resources[texture].texture;
 }*/
-const display={
+export const display={
     //UI组件成员
 	frontImage : new PIXI.Sprite(),
 	backImage : new PIXI.Sprite(),
@@ -56,17 +56,17 @@ export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => 
 	display.startButton.texture = Loader.resources[startButtonTexture].texture;
 	display.loadButton.texture = Loader.resources[loadButtonTexture].texture;
 	display.startButton.interactive = true;
-	display.startButton.on(click, (event) => {
+	display.startButton.on('click', (event) => {
 		//UI.setupGameUI(底下那个框的材质,第一个场景的名称)
 		console.log('Start game');
-		setupGameUI('asstes/data/image/frame.png',targetScene);
+		setupGameUI('./asstes/data/image/frame.png',targetScene);
 	});
 	Stage.addChild(splashUIButton);
 }
 export const setupGameUI = (framePic,startScene) => {
-	UI.hide(splashUIButton);
+	hide(splashUIButton);
 	//组建游戏界面
-	Stage.addChild(UI.display.frontImage);
+	Stage.addChild(display.frontImage);
 	Stage.addChild(dialogBar);
 	Stage.addChild(buttonBar);
 	display.frontImage.x = 100;

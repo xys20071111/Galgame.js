@@ -1,4 +1,5 @@
 'use strict'
+import * as UI from './ui'
 const model = {
   name:null,
   bgm:null,
@@ -10,7 +11,7 @@ const model = {
   codeToRun:null,
   bgm:null
 }
-export const list = {};
+const list = {};
 export  function add(n,bg,fi,ntd,dtd,ns,ctr,bgm){
   let newScene = Object.create(scene.model);
   newScene.name = n;;
@@ -74,11 +75,17 @@ scene.use = (arg)=>{
 
 export function use(s){
 	if(typeof s !== typeof 'string')
-		throw 'TypeError target should be a String';
+		throw 'TypeError:target should be a String';
 	console.log('Use scene ',s);
 	let target = scene.list[s];
-	if(target.frontImage != null && target.frontImage != 'same' )
-		UI.display.FrontImage(target.frontImage);
+    if(target.frontImage != null && target.frontImage != 'same' ){
+        if(target.frontImage !== 'none'){
+            UI.display.FrontImage.visible = false;
+        }else{
+            UI.display.FrontImage.visible = true;
+            UI.display.FrontImage(target.frontImage);
+        }
+    }
 	if(target.background != 'same')
 		UI.display.BackImage(target.background);
 	UI.display.Dialog({name:target.characterName,dialog:target.dialog});
