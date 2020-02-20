@@ -9,5 +9,8 @@ module.exports = {
     devServer:{
         hotOnly:false,
         disableHostCheck:true,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
     },
 };

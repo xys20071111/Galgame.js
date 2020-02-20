@@ -29,7 +29,7 @@ Loader.add(config.resourcesList)
              Stage.addChild(display.backImage);
              //显示背景
              //background.texture = PIXI.loader.resources['asstes/data/bgimage/title.jpg'].texture;
-             display.BackImage(config.GameConfig.titleBackImage);
+             display.BackImage = config.GameConfig.titleBackImage;
              //显示开始UI
              setStartUI(config.GameConfig.startButtonTexture,config.GameConfig.loadButtonTexture,config.GameConfig.startScene);
 

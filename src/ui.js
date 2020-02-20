@@ -6,6 +6,8 @@ import * as scene from './scene'
 export const buttonBar = new PIXI.Container();
 export const splashUIButton = new PIXI.Container();
 export const dialogBar = new PIXI.Container();
+const GamePanel = new PIXI.Container();
+GamePanel.addChild(dialogBar);
 export const hide=(target)=>{
 	target.alpha = 0;
 	target.visible=false;
@@ -41,11 +43,12 @@ export const display={
 	talkBarFrame : new PIXI.Sprite(),
 	startButton : new PIXI.Sprite(),
 	loadButton : new PIXI.Container(),
-	FrontImage : function(value){display.frontImage.texture = Loader.resources[value].texture},
-	BackImage : function(value){display.backImage.texture = Loader.resources[value].texture},
+	set FrontImage (value){this.frontImage.texture = Loader.resources[value].texture},
+	set BackImage (value){this.backImage.texture = Loader.resources[value].texture},
 	Dialog : function(value){display.name.text = value.name;UI.display.dialog.text = value.dialog}
 
 }
+GamePanel.addChild(display.frontImage)
 export default {display}
 export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
 	console.log('Init startUI');
