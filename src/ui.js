@@ -7,7 +7,6 @@ export const buttonBar = new PIXI.Container();
 export const splashUIButton = new PIXI.Container();
 export const dialogBar = new PIXI.Container();
 const GamePanel = new PIXI.Container();
-GamePanel.addChild(dialogBar);
 export const hide=(target)=>{
 	target.alpha = 0;
 	target.visible=false;
@@ -48,7 +47,8 @@ export const display={
 	Dialog : function(value){display.name.text = value.name;UI.display.dialog.text = value.dialog}
 
 }
-GamePanel.addChild(display.frontImage)
+GamePanel.addChild(display.frontImage);
+GamePanel.addChild(dialogBar);
 export default {display}
 export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
 	console.log('Init startUI');
@@ -69,9 +69,10 @@ export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => 
 export const setupGameUI = (framePic,startScene) => {
 	hide(splashUIButton);
 	//组建游戏界面
-	Stage.addChild(display.frontImage);
-	Stage.addChild(dialogBar);
-	Stage.addChild(buttonBar);
+	//Stage.addChild(display.frontImage);
+	//Stage.addChild(dialogBar);
+    //Stage.addChild(buttonBar);
+    Stage.addChild(GamePanel);
 	display.frontImage.x = 100;
 	display.frontImage.y = 45;
 	display.frontImage.width = 500;
