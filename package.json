@@ -1,0 +1,29 @@
+{
+	"name": "galgame.js",
+	"version": "1.0.0",
+	"description": "A galgame framework.",
+	"main": "index.html",
+	"scripts": {
+		"test": "webpack-dev-server --config ./build/webpack.dev.config.js",
+		"start": "electron desktop"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xys20071111/Galgame.js"
+	},
+	"keywords": [
+		"Galgame",
+		"HTML5"
+	],
+	"author": "xys20071111",
+	"license": "MIT",
+	"dependencies": {
+		"pixi.js": "^5.2.1"
+	},
+	"devDependencies": {
+		"vconsole": "^3.3.4",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.10.3"
+	}
+}
