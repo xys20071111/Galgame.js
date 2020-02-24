@@ -1,5 +1,6 @@
 'use strict'
 import * as UI from './ui'
+import gameStatus from './main'
 const model = {
   name:null,
   bgm:null,
@@ -22,7 +23,7 @@ export  function add(n,bg,fi,ntd,dtd,ns,ctr,bgm){
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
   newScene.bgm = bgm;
-  scene.list[n] = newScene;
+  list[n] = newScene;
 }
 /*
 scene.use = (target)=>{
@@ -77,7 +78,7 @@ export function use(s){
 	if(typeof s !== typeof 'string')
 		throw 'TypeError:target should be a String';
 	console.log('Use scene ',s);
-	let target = scene.list[s];
+	let target = list[s];
     if(target.frontImage != null && target.frontImage != 'same' ){
         if(target.frontImage !== 'none'){
             UI.display.FrontImage.visible = false;

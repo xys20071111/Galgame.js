@@ -3,13 +3,14 @@ import * as config from './config'
 import * as PIXI from "pixi.js"
 import {View,Stage,Loader} from './app'
 import {display,setStartUI} from './ui'
+import * as VConsole from 'vconsole'
 if(config.GameConfig.isDev){
-	//let vcon = new VConsole();
+	let vcon = new VConsole();
 }
 
 document.body.appendChild(View);
 //基础变量
-var gameStatus = {
+export const gameStatus = {
   scene:null
   //如果还有什么需要的话，自己定义吧。
 };
