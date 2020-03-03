@@ -1,5 +1,5 @@
 'use strict'
-import * as UI from './ui'
+import * as Component from './components'
 import gameStatus from './main'
 const model = {
   name:null,

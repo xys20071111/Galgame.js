@@ -2,7 +2,8 @@
 import * as config from './config'
 import * as PIXI from "pixi.js"
 import {View,Stage,Loader} from './app'
-import {display,setStartUI} from './ui'
+import {setStartUI} from './ui'
+import {display} from './components'
 import * as VConsole from 'vconsole'
 if(config.GameConfig.isDev){
 	let vcon = new VConsole();
