@@ -1,6 +1,8 @@
 'use strict'
-import * as Component from './components'
-import gameStatus from './main'
+import {Howler,Howl} from 'howler';
+import * as Component from './components';
+import gameStatus from './main';
+let playingBGM = null;
 const model = {
   name:null,
   bgm:null,
@@ -22,7 +24,11 @@ export  function add(n,bg,fi,ntd,dtd,ns,ctr,bgm){
   newScene.dialog = dtd;
   newScene.nextScene = ns;
   newScene.codeToRun = ctr;
-  newScene.bgm = bgm;
+  if(bgm && bgm !== "none" && bgm !== "same"){
+        newScene.bgm = new Howler({src:bgm});
+    }else{
+        newScene.bgm = null;
+    }
   list[n] = newScene;
 }
 /*
@@ -86,6 +92,11 @@ export function use(s){
             UI.display.FrontImage.visible = true;
             UI.display.FrontImage(target.frontImage);
         }
+    }
+    if(s.bgm){
+        playingBGM.stop();
+        playingBGM = s.bgm();
+        playingBGM.play();
     }
 	if(target.background != 'same')
 		UI.display.BackImage(target.background);

@@ -7,6 +7,7 @@ module.exports = {
         filename: './dev/app.js'
     },
     devServer:{
+        host:'0.0.0.0',
         hotOnly:false,
         disableHostCheck:true,
         headers: {
