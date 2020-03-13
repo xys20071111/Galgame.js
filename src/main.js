@@ -5,7 +5,7 @@ import {View,Stage,Loader} from './app'
 import {setStartUI} from './ui'
 import {display} from './components'
 import * as VConsole from 'vconsole'
-if(config.GameConfig.isDev){
+if(config.GameConfig.isDev && config.click == 'tap'){
 	let vcon = new VConsole();
 }
 

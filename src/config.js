@@ -1,9 +1,9 @@
 
 export var click;
 if(navigator.userAgent.match(/.*Mobile.*/)){
-    click = 'click';
-}else
     click = 'tap';
+}else
+    click = 'click';
 console.info('Click type:%s',click);
 export const GameConfig = {
 	isDev:true,

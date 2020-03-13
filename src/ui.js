@@ -50,12 +50,12 @@ export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => 
 	Stage.addChild(Component.splashUIButton);
 }
 export const setupGameUI = (framePic,startScene) => {
-	hide(splashUIButton);
+	hide(Component.splashUIButton);
 	//组建游戏界面
 	//Stage.addChild(Component.display.frontImage);
 	//Stage.addChild(dialogBar);
     //Stage.addChild(buttonBar);
-    Stage.addChild(GamePanel);
+    Stage.addChild(Component.GamePanel);
 	Component.display.frontImage.x = 100;
 	Component.display.frontImage.y = 45;
 	Component.display.frontImage.width = 500;

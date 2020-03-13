@@ -36,3 +36,4 @@ display.frontImage.interactive = true;
 GamePanel.addChild(display.frontImage);
 GamePanel.addChild(dialogBar);
 export default {display}
+export {GamePanel};
