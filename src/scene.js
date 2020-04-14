@@ -16,6 +16,12 @@ const model = {
   bgm:null
 }
 const list = {};
+/**
+ * 创建新场景
+ * 参数见源代码
+ * @example
+ * add("start","path/to/background","path/to/frontImage","Alice","Am I Alice?","nameOfNextScene",()=>{},null)
+ */
 export  function add(n,bg,fi,ntd,dtd,ns,ctr,bgm){
   let newScene = Object.create(scene.model);
   newScene.name = n;;
@@ -80,7 +86,10 @@ scene.use = (arg)=>{
   }
 }
 */
-
+/**
+ * 使用一个场景
+ * @argument {string} s 场景名
+ */
 export function use(s){
 	if(typeof s !== typeof 'string')
 		throw new Error('TypeError:target should be a String');

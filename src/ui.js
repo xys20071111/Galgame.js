@@ -3,7 +3,7 @@ import * as Component from './components'
 import * as PIXI from "pixi.js"
 import {Stage,Loader} from "./app"
 import * as scene from './scene'
-import {GameConfig} as gc from './config'
+import {GameConfig} from './config'
 
 
 export const hide=(target)=>{
@@ -33,11 +33,12 @@ UI.setFrontImage = (texture) => {
   frontImage.texture = Loader.resources[texture].texture;
 }*/
 
-/*
- @parma {string} startButtonTexture
- @parma {string} loadButtonTexture
-  */
-export const setStartUI = (startButtonTexture,loadButtonTexture) => {
+/**
+ * 设置标题页ui
+ * @argument {string} startButtonTexture
+ * @argument {string} loadButtonTexture
+*/
+export function setStartUI (startButtonTexture,loadButtonTexture){
 	console.log('Init startUI');
 	//设置开始按钮位置
 	Component.display.startButton.x = 300; 
@@ -49,16 +50,17 @@ export const setStartUI = (startButtonTexture,loadButtonTexture) => {
 	Component.display.startButton.on('click', (event) => {
 		//UI.setupGameUI(底下那个框的材质,第一个场景的名称)
 		console.log('Start game');
-		setupGameUI(gc.dialogBarTexture,'start');
+		setupGameUI(GameConfig.dialogBarTexture,'start');
 	});
 	Stage.addChild(Component.splashUIButton);
 }
-/*
- @parma {string} framrPic
- @parma {string} startScene
+/**
+ * 进入游戏UI
+ * @argument {string} framrPic
+ * @argument {string} startScene
  也许你不应该自己调用这个函数
  */
-export const setupGameUI = (framePic,startScene) => {
+export function setupGameUI (framePic,startScene){
 	hide(Component.splashUIButton);
 	//组建游戏界面
 	//Stage.addChild(Component.display.frontImage);
@@ -78,7 +80,11 @@ export const setupGameUI = (framePic,startScene) => {
 	Component.dialogBar.y = 310;
 	scene.use(startScene);
 }
-export const setNextScene = (nextScene)=>{
+/**
+ * 设置下一个场景
+ * @argument {string} nextScene 场景名
+*/
+export function setNextScene(nextScene){
 	Component.dialogBar.on(click,()=>{
 		scene.use(nextScene);
 	});
@@ -89,7 +95,7 @@ export const setNextScene = (nextScene)=>{
 		scene.use(nextScene);
 	});
 }
-export const createButton = (bg,x,y,onClick)=>{
+export function createButton (bg,x,y,onClick){
 	let newButton = new PIXI.Sprite(Loader.resources[bg].texture);
 	newButton.x = x;
 	newButton.y = y;

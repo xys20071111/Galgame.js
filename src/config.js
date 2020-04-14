@@ -13,7 +13,7 @@ export const GameConfig = {
 	titleBackImage:'./asstes/data/image/bgimage/title.jpg', //标题页背景
 	startButtonTexture:'./asstes/data/image/button/start.png',
 	loadButtonTexture:'./asstes/data/image/button/start.png',
-	dialogBarTexture:'/asstes/data/image/frame.png''
+	dialogBarTexture:'/asstes/data/image/frame.png'
 
 };
 export const sysconfig = {

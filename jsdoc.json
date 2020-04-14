@@ -1,0 +1,14 @@
+{
+    "tags": {
+        "allowUnknownTags": false,
+        "dictionaries": ["jsdoc","closure"]
+    },
+    "source": {
+        "include":["src"]
+    },
+    "plugins": ["./node_modules/jsdoc-export-default-interop/dist/index"],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}
