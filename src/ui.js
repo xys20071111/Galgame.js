@@ -3,6 +3,7 @@ import * as Component from './components'
 import * as PIXI from "pixi.js"
 import {Stage,Loader} from "./app"
 import * as scene from './scene'
+import {GameConfig} as gc from './config'
 
 
 export const hide=(target)=>{
@@ -32,8 +33,11 @@ UI.setFrontImage = (texture) => {
   frontImage.texture = Loader.resources[texture].texture;
 }*/
 
-
-export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => {
+/*
+ @parma {string} startButtonTexture
+ @parma {string} loadButtonTexture
+  */
+export const setStartUI = (startButtonTexture,loadButtonTexture) => {
 	console.log('Init startUI');
 	//设置开始按钮位置
 	Component.display.startButton.x = 300; 
@@ -45,10 +49,15 @@ export const setStartUI = (startButtonTexture,loadButtonTexture,targetScene) => 
 	Component.display.startButton.on('click', (event) => {
 		//UI.setupGameUI(底下那个框的材质,第一个场景的名称)
 		console.log('Start game');
-		setupGameUI('./asstes/data/image/frame.png',targetScene);
+		setupGameUI(gc.dialogBarTexture,'start');
 	});
 	Stage.addChild(Component.splashUIButton);
 }
+/*
+ @parma {string} framrPic
+ @parma {string} startScene
+ 也许你不应该自己调用这个函数
+ */
 export const setupGameUI = (framePic,startScene) => {
 	hide(Component.splashUIButton);
 	//组建游戏界面

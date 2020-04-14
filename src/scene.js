@@ -1,3 +1,4 @@
+//TODO:重构为TypeScript
 'use strict'
 import {Howler,Howl} from 'howler';
 import * as Component from './components';
@@ -82,7 +83,7 @@ scene.use = (arg)=>{
 
 export function use(s){
 	if(typeof s !== typeof 'string')
-		throw 'TypeError:target should be a String';
+		throw new Error('TypeError:target should be a String');
 	console.log('Use scene ',s);
 	let target = list[s];
     if(target.frontImage != null && target.frontImage != 'same' ){

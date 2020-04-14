@@ -6,13 +6,13 @@ export const dialogBar = new PIXI.Container();
 const GamePanel = new PIXI.Container();
 export const display={
     //UI组件成员
-	frontImage : new PIXI.Sprite(),
-	backImage : new PIXI.Sprite(),
-	name : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
-	dialog : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),
-	talkBarFrame : new PIXI.Sprite(),
-	startButton : new PIXI.Sprite(),
-	loadButton : new PIXI.Container(),
+	frontImage : new PIXI.Sprite(),//前景
+	backImage : new PIXI.Sprite(),//背景
+	name : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),//角色名
+	dialog : new PIXI.Text("",{fontFamily : 'Arial', fontSize: 24, fill : 0x000000}),//对话内容
+	talkBarFrame : new PIXI.Sprite(),//对话框
+	startButton : new PIXI.Sprite(),//开始按钮
+	loadButton : new PIXI.Container(),//加载按钮
 	/**
      * @param {string} value
      */
