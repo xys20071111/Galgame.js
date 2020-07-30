@@ -11,7 +11,7 @@ module.exports = {
         hotOnly:false,
         disableHostCheck:true,
         headers: {
-            'host':'https://8080-a1fde922-0f5f-49c7-a117-b9c506af706d.ws-ap01.gitpod.io/',
+            'host':'127.0.0.1',
             'Access-Control-Allow-Origin': '*',
         },
     },

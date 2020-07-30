@@ -1,8 +1,8 @@
 //TODO:重构为TypeScript
 'use strict'
 import {Howler,Howl} from 'howler';
-import * as Component from './components';
-import gameStatus from './main';
+//import * as Component from './components';
+import gameStatus from './stateManager';
 let playingBGM = null;
 const model = {
   name:null,

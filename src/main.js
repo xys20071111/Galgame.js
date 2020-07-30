@@ -1,6 +1,6 @@
 "use strict"
 import * as config from './config'
-import * as PIXI from "pixi.js"
+//import * as PIXI from "pixi.js"
 import {View,Stage,Loader} from './app'
 import {setStartUI} from './ui'
 import {display} from './components'
@@ -10,11 +10,6 @@ if(config.GameConfig.isDev && config.click == 'tap'){
 }
 
 document.body.appendChild(View);
-//基础变量
-export const gameStatus = {
-  scene:null
-  //如果还有什么需要的话，自己定义吧。
-};
 
 //预加载素材
 Loader.add(config.resourcesList)
